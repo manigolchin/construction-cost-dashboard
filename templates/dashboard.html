@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Baustellen-Dashboard</title>
+</head>
+<body>
+    <h2>📊 Baustellen-Kostenübersicht</h2>
+    <p><b>Gesamt Soll-Kosten:</b> {{ total_soll }} €</p>
+    <p><b>Gesamt Ist-Kosten:</b> {{ total_ist }} €</p>
+    <p><b>Abweichung in %:</b> {{ abweichung_prozent }} %</p>
+
+
+    <p>Status:
+        {% if status == 'grün' %}
+            🟢 <b>Im Budget</b>
+        {% elif status == 'gelb' %}
+            🟡 <b>Leichte Überschreitung</b>
+        {% else %}
+            🔴 <b>Über Budget</b>
+        {% endif %}
+    </p>
+
+    <img src="{{ chart_path }}" width="600">
+    <br><br>
+    <a href="/">⬅️ Neue Datei hochladen</a>
+</body>
+</html>
